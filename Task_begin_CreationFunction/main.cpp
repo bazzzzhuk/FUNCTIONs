@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 unsigned long long Factorial(unsigned long long n)
@@ -22,16 +22,16 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	long long number_f;
-	cout << "Âû÷èñëåíèå ôàêòîðèàëà.\nÂâåäèòå ÷èñëo  : "; cin >> number_f;
-	if (number_f != 0 && number_f <= 20) { cout << "Ôàêòîðèàë ðàâåí: " << Factorial(number_f) << endl; }
+	cout << "Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð»Ð°.\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»o  : "; cin >> number_f;
+	if (number_f != 0 && number_f <= 20) { cout << "Ð¤Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð» Ñ€Ð°Ð²ÐµÐ½: " << Factorial(number_f) << endl; }
 	else {
-		cout << "Ôàêòîðèàë ðàâåí íóëþ, ëèáî ñëèøêîì áîëüøîå ââåä¸íîå ÷èñëî!!!" << endl;
+		cout << "Ð¤Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð» Ñ€Ð°Ð²ÐµÐ½ Ð½ÑƒÐ»ÑŽ, Ð»Ð¸Ð±Ð¾ ÑÐ»Ð¸ÑˆÐºÐ¾Ð¼ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ðµ Ð²Ð²ÐµÐ´Ñ‘Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾!!!" << endl;
 	}
 	cout << endl;
 
 	double number, exp;
-	cout << "Âîçâåäåíèÿ â ñòåïåíü\nÂâåäèòå Îñíîâàíèå  : "; cin >> number;
-	cout << "Ââåäèòå ñòåïåíü: "; cin >> exp;
-	cout << "×èñëî " << number << " â ñòåïåíè " << exp << " ðàâíî " << Exponenta(number, exp) << endl;
+	cout << "Ð’Ð¾Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ Ð² ÑÑ‚ÐµÐ¿ÐµÐ½ÑŒ\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐžÑÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ  : "; cin >> number;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚ÐµÐ¿ÐµÐ½ÑŒ: "; cin >> exp;
+	cout << "Ð§Ð¸ÑÐ»Ð¾ " << number << " Ð² ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ " << exp << " Ñ€Ð°Ð²Ð½Ð¾ " << Exponenta(number, exp) << endl;
 
 }
