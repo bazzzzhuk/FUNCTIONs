@@ -5,7 +5,7 @@ using namespace std;
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(float arr[], const int n, int minRand = 0, int maxRand = 100);
-void FillRand(char arr[], const int n, int minRand = 64, int maxRand = 128);
+void FillRand(char arr[], const int n, int minRand = 65, int maxRand = 90);
 
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
@@ -58,6 +58,8 @@ void main()
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
+	Sum(arr, n);
+	
 
 	const int SIZE = 8;
 	double brr[SIZE];
@@ -65,6 +67,7 @@ void main()
 	Print(brr, SIZE);
 	Sort(brr, SIZE);
 	Print(brr, SIZE);
+	Sum(brr, SIZE);
 
 	const int char_size = 10;
 	char charr[char_size];
@@ -72,6 +75,7 @@ void main()
 	Print(charr, char_size);
 	Sort(charr, char_size);
 	Print(charr, char_size);
+	Sum(charr, char_size);
 
 	const int float_size = 10;
 	float flo_arr[float_size];
@@ -79,6 +83,7 @@ void main()
 	Print(flo_arr, float_size);
 	Sort(flo_arr, float_size);
 	Print(flo_arr, float_size);
+	Sum(flo_arr, float_size);
 
 
 }
@@ -95,7 +100,7 @@ void FillRand(char arr[], const int n, int minRand, int maxRand)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % (maxRand - minRand) - minRand;
+		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
 }
 
@@ -112,8 +117,8 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 
 void FillRand(float arr[], const int n, int minRand, int maxRand)
 {
-	minRand *= 100;
-	maxRand *= 100;
+	minRand *= 10;
+	maxRand *= 10;
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % (maxRand - minRand) - minRand;
@@ -152,7 +157,7 @@ void Print(char arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << tab;
+		cout << arr[i] << " " << (int)arr[i] << tab;
 	}
 	cout << endl;
 }
@@ -204,8 +209,8 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
-	
-	void Sort(float arr[], const int n)
+
+void Sort(float arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -219,4 +224,42 @@ void Sort(double arr[], const int n)
 			}
 		}
 	}
+}
+
+void Sum(int arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	cout << "Summa: " << sum << endl;
+}
+void Sum(double arr[], const int n)
+{
+	double sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	cout << "Summa: " << sum << endl;
+}
+void Sum(float arr[], const int n)
+{
+	float sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	cout << "Summa: " << sum << endl;
+}
+void Sum(char arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		
+		sum += arr[i];
+	}
+	cout << "Summa: " << sum << endl;
 }
