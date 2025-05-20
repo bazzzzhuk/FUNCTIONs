@@ -29,14 +29,14 @@ float Avg(float arr[], const int n);
 char Avg(char arr[], const int n);
 
 int MinValueIn(int arr[], const int n);
-void MinValueIn(double arr[], const int n);
-void MinValueIn(float arr[], const int n);
-void MinValueIn(char arr[], const int n);
+double MinValueIn(double arr[], const int n);
+float MinValueIn(float arr[], const int n);
+char MinValueIn(char arr[], const int n);
 
 int MaxValueIn(int arr[], const int n);
-void MaxValueIn(double arr[], const int n);
-void MaxValueIn(float arr[], const int n);
-void MaxValueIn(char arr[], const int n);
+double MaxValueIn(double arr[], const int n);
+float MaxValueIn(float arr[], const int n);
+char MaxValueIn(char arr[], const int n);
 
 void ShiftLeft(int arr[], const int n, int shift_l);
 void ShiftLeft(double arr[], const int n, int shift_l);
@@ -82,7 +82,8 @@ void main()
 	Print(brr, SIZE);
 	ShiftRight(brr, SIZE, shift_r);
 	Print(brr, SIZE);
-
+	cout << "MinValueIn: " << MinValueIn(brr, SIZE) << endl;
+	cout << "MaxValueIn: " << MaxValueIn(brr, SIZE) << endl;
 	cout << "Summa: " << Sum(brr, SIZE) << endl;
 	cout << "Avg: " << Avg(brr, SIZE) << endl;
 
@@ -94,6 +95,8 @@ void main()
 	Print(charr, char_size);
 	Sort(charr, char_size);
 	Print(charr, char_size);
+	cout << "MinValueIn: " << MinValueIn(charr, char_size) << endl;
+	cout << "MaxValueIn: " << MaxValueIn(charr, char_size) << endl;
 	cout << "Summa: " << Sum(charr, char_size) << endl;
 	cout << "Avg: " << (int)Avg(charr, char_size) << endl;
 
@@ -107,6 +110,8 @@ void main()
 	Print(flo_arr, float_size);
 	ShiftRight(flo_arr, float_size, shift_r);
 	Print(flo_arr, float_size);
+	cout << "MinValueIn: " << MinValueIn(flo_arr, float_size) << endl;
+	cout << "MaxValueIn: " << MaxValueIn(flo_arr, float_size) << endl;
 	cout << "Summa: " << Sum(flo_arr, float_size) << endl;
 	cout << "Avg: " << Avg(flo_arr, float_size) << endl;
 
@@ -402,9 +407,33 @@ int MinValueIn(int arr[], const int n)
 	}
 	return arr_min;
 }
-void MinValueIn(double arr[], const int n);
-void MinValueIn(float arr[], const int n);
-void MinValueIn(char arr[], const int n);
+double MinValueIn(double arr[], const int n) 
+{
+	double arr_min = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < arr_min)arr_min = arr[i];
+	}
+	return arr_min;
+}
+float MinValueIn(float arr[], const int n)
+{
+	float arr_min = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < arr_min)arr_min = arr[i];
+	}
+	return arr_min;
+}
+char MinValueIn(char arr[], const int n)
+{
+	char arr_min = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < arr_min)arr_min = arr[i];
+	}
+	return arr_min;
+}
 
 int MaxValueIn(int arr[], const int n)
 {
@@ -415,6 +444,29 @@ int MaxValueIn(int arr[], const int n)
 	}
 	return arr_max;
 }
-void MaxValueIn(double arr[], const int n);
-void MaxValueIn(float arr[], const int n);
-void MaxValueIn(char arr[], const int n);
+double MaxValueIn(double arr[], const int n)
+{
+	int arr_max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > arr_max)arr_max = arr[i];
+	}
+	return arr_max;
+}
+float MaxValueIn(float arr[], const int n)
+{
+	float arr_max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > arr_max)arr_max = arr[i];
+	}
+	return arr_max;
+}
+char MaxValueIn(char arr[], const int n) {
+	char arr_max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > arr_max)arr_max = arr[i];
+	}
+	return arr_max;
+}
