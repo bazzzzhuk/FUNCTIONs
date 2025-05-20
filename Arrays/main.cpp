@@ -2,10 +2,10 @@
 using namespace std;
 #define tab "\t"
 
-void FillRand(int arr[], const int n, int minRand=0, int maxRand=100);
-void FillRand(double arr[], const int n, int minRand=0, int maxRand=100);
-void FillRand(float arr[], const int n, int minRand=0, int maxRand=100);
-void FillRand(char arr[], const int n, int minRand=65, int maxRand=175);
+void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(float arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(char arr[], const int n, int minRand = 64, int maxRand = 128);
 
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
@@ -66,21 +66,28 @@ void main()
 	Sort(brr, SIZE);
 	Print(brr, SIZE);
 
-	const int char_size = 20;
-	char char_rr[char_size];
-	FillRand(char_rr, char_size);
-	Print(char_rr, char_size);
-	Sort(char_rr, char_size);
-	Print(char_rr, char_size);
+	const int char_size = 10;
+	char charr[char_size];
+	FillRand(charr, char_size);
+	Print(charr, char_size);
+	Sort(charr, char_size);
+	Print(charr, char_size);
 
-	
+	const int float_size = 10;
+	float flo_arr[float_size];
+	FillRand(flo_arr, float_size);
+	Print(flo_arr, float_size);
+	Sort(flo_arr, float_size);
+	Print(flo_arr, float_size);
+
+
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % (maxRand-minRand)-minRand;
+		arr[i] = rand() % (maxRand - minRand) - minRand;
 	}
 }
 
@@ -88,7 +95,7 @@ void FillRand(char arr[], const int n, int minRand, int maxRand)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % (maxRand-minRand)-minRand;
+		arr[i] = rand() % (maxRand - minRand) - minRand;
 	}
 }
 
@@ -98,7 +105,7 @@ void FillRand(double arr[], const int n, int minRand, int maxRand)
 	maxRand *= 100;
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % (maxRand-minRand)-minRand;
+		arr[i] = rand() % (maxRand - minRand) - minRand;
 		arr[i] /= 100;
 	}
 }
@@ -109,7 +116,7 @@ void FillRand(float arr[], const int n, int minRand, int maxRand)
 	maxRand *= 100;
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % (maxRand-minRand)-minRand;
+		arr[i] = rand() % (maxRand - minRand) - minRand;
 		arr[i] /= 100;
 	}
 }
@@ -191,6 +198,22 @@ void Sort(double arr[], const int n)
 			if (arr[j] < arr[i])
 			{
 				double buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+	
+	void Sort(float arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				float buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
