@@ -48,7 +48,6 @@ void ShiftRight(double arr[], const int n, int shift_r);
 void ShiftRight(float arr[], const int n, int shift_r);
 void ShiftRight(char arr[], const int n, int shift_r);
 
-
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -70,8 +69,6 @@ void main()
 	cout << "Summa: " << Sum(arr, n) << endl;
 	cout << "Avg: " << Avg(arr, n) / 1000. << endl;
 
-
-
 	const int SIZE = 8;
 	double brr[SIZE];
 	FillRand(brr, SIZE);
@@ -87,7 +84,6 @@ void main()
 	cout << "Summa: " << Sum(brr, SIZE) << endl;
 	cout << "Avg: " << Avg(brr, SIZE) << endl;
 
-
 	const int char_size = 10;
 	char charr[char_size];
 	//int charr_int[char_size];
@@ -99,8 +95,6 @@ void main()
 	Print(charr, char_size);
 	ShiftRight(charr, char_size, shift_r);
 	Print(charr, char_size);
-
-
 	cout << "MinValueIn: " << MinValueIn(charr, char_size) << endl;
 	cout << "MaxValueIn: " << MaxValueIn(charr, char_size) << endl;
 	cout << "Summa: " << Sum(charr, char_size) << endl;
@@ -120,7 +114,6 @@ void main()
 	cout << "MaxValueIn: " << MaxValueIn(flo_arr, float_size) << endl;
 	cout << "Summa: " << Sum(flo_arr, float_size) << endl;
 	cout << "Avg: " << Avg(flo_arr, float_size) << endl;
-
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
@@ -306,8 +299,7 @@ double Avg(double arr[], const int n)
 }
 float Avg(float arr[], const int n)
 {
-	double avg = Sum(arr, n) / n;
-	return avg;
+	return Sum(arr, n) / n;
 }
 char Avg(char arr[], const int n)
 {
@@ -368,12 +360,13 @@ void ShiftLeft(char arr[], const int n, int shift_l)
 
 void ShiftRight(int arr[], const int n, int shift_r)
 {
-	for (int i = 0; i < shift_r; i++)
+	/*for (int i = 0; i < shift_r; i++)
 	{
 		int buffer = arr[n - 1];
 		for (int i = n - 1; i > 0; i--) arr[i] = arr[i - 1];
 		arr[0] = buffer;
-	}
+	}*/
+	ShiftLeft(arr, n, n - shift_r);
 }
 void ShiftRight(double arr[], const int n, int shift_r)
 {
