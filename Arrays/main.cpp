@@ -95,6 +95,12 @@ void main()
 	Print(charr, char_size);
 	Sort(charr, char_size);
 	Print(charr, char_size);
+	ShiftLeft(charr, char_size, shift_l);
+	Print(charr, char_size);
+	ShiftRight(charr, char_size, shift_r);
+	Print(charr, char_size);
+
+
 	cout << "MinValueIn: " << MinValueIn(charr, char_size) << endl;
 	cout << "MaxValueIn: " << MaxValueIn(charr, char_size) << endl;
 	cout << "Summa: " << Sum(charr, char_size) << endl;
@@ -296,8 +302,7 @@ int Avg(int arr[], const int n)
 }
 double Avg(double arr[], const int n)
 {
-	double avg = Sum(arr, n) / n;
-	return avg;
+	return (double)Sum(arr, n) / n;
 }
 float Avg(float arr[], const int n)
 {
