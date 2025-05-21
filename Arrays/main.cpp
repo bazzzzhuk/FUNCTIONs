@@ -366,7 +366,7 @@ void ShiftRight(int arr[], const int n, int shift_r)
 		for (int i = n - 1; i > 0; i--) arr[i] = arr[i - 1];
 		arr[0] = buffer;
 	}*/
-	ShiftLeft(arr, n, n - shift_r);
+	ShiftLeft(arr,n,n-shift_r);
 }
 void ShiftRight(double arr[], const int n, int shift_r)
 {
